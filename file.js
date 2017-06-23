@@ -30,7 +30,8 @@ app.post('/file_upload', function (req, res) {
          }else{
                response = {
                    message:'File uploaded successfully', 
-                   filename:req.files[0].originalname
+                   filename:req.files[0].originalname;
+                   
               };
           }
           console.log( response );

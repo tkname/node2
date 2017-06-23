@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form >
+		<p>添加</p>
+		<p>姓名：<input type="text" > </p>
+		<p>年龄：<input type="number" > </p>			
+	</form>
+	<table>
+		<tr>
+			<td>id</td>
+			<td>姓名</td>
+			<td>年龄</td>
+		</tr>		
+	</table>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url: 'http://192.168.1.106:8082/select',
+			type: 'get',
+			// dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+			// data: {param1: 'value1'},
+		})
+		.done(function(res) {
+			console.log("success",res);
+		})
+		.fail(function(res) {
+			console.log("error",res);
+		})
+		.always(function(res) {
+			console.log("complete",res);
+		});
+		
+	})
+		
+	</script>
+</body>
+</html>
